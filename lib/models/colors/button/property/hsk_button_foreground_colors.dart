@@ -1,14 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:hoshisky_ui/models/colors/hsk_colors.dart';
+
+import 'package:hoshisky_ui/models/colors/hsk_primary_colors.dart';
 
 abstract class HskButtonForegroundColors {
-  Color get baseLight;
-  Color get baseDark;
-  Color get pressedLight;
-  Color get pressedDark;
-  Color get disabledLight;
-  Color get disabledDark;
-  dynamic get base;
-  dynamic get disabled;
+  HskPrimaryColors get base;
+  HskPrimaryColors get disabled;
   // HskColors get pressed;
 }
+
+

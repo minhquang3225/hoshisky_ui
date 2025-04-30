@@ -2,10 +2,13 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:hoshisky_ui/extensions/theme_provider_extension.dart';
-import 'package:hoshisky_ui/utils/get_button_color.dart';
+import 'package:hoshisky_ui/extensions/themes/hsk_colors_extension.dart';
+import 'package:hoshisky_ui/utils/hsk_button_colors_utils.dart';
+
 
 // đặc điểm: text button, có màu nền theo primary hoặc truyền vào, không có border
 class HskTextButtonType1 extends StatelessWidget {
+  
   late double? verticalPadding;
   late double? horizontalPadding;
   late EdgeInsets? margin;
@@ -14,7 +17,6 @@ class HskTextButtonType1 extends StatelessWidget {
   late Color? textColor;
   final String buttonTitle;
 
-  // late Color? overlayColor;
 
   HskTextButtonType1({
     super.key,
@@ -25,7 +27,6 @@ class HskTextButtonType1 extends StatelessWidget {
     required this.buttonTitle,
     this.backgroundColor,
     this.textColor,
-    // this.overlayColor,
   });
 
   @override
@@ -39,11 +40,8 @@ class HskTextButtonType1 extends StatelessWidget {
     horizontalPadding =
         horizontalPadding ?? ms.textButtonHorizontalPaddingSmall;
     backgroundColor = backgroundColor ??
-        (!isDarkMode
-            ? cs.button.background.baseLight
-            : cs.button.background.baseDark);
-    textColor = textColor ??
-        (!isDarkMode ? cs.buttonTextColor : cs.darkModeButtonTextColor);
+        cs.button.background.base.primary.byMode(isDarkMode);
+    textColor = textColor ?? cs.semantic.foregroundColor.byMode(isDarkMode);
     margin = margin ?? EdgeInsets.all(0);
     final baseStyle = TextButtonTheme.of(context).style;
     return Container(
@@ -59,14 +57,12 @@ class HskTextButtonType1 extends StatelessWidget {
               // Nếu enabled → dùng màu bạn muốn override
               return backgroundColor;
             }),
-            foregroundColor: getButtonColor(
-              normalColor: textColor!,
-              disabledColor: !isDarkMode
-                  ? cs.button.foreground.baseLight
-                  : cs.button.foreground.baseDark,
-              hoveredColor: textColor!,
-              selectedColor: textColor!,
-              pressedColor: textColor!,
+            foregroundColor: HskButtonColorUtils.resolveByState(
+              normal: textColor!,
+              disabled: cs.button.foreground.disabled.primary.byMode(isDarkMode),
+              hovered: textColor!,
+              selected: textColor!,
+              pressed: textColor!,
             ),
             padding: WidgetStateProperty.all(
               EdgeInsets.symmetric(

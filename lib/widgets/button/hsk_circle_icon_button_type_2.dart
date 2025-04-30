@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hoshisky_ui/constants/colors/color.dart';
 import 'package:hoshisky_ui/extensions/theme_provider_extension.dart';
+import 'package:hoshisky_ui/extensions/themes/hsk_colors_extension.dart';
 import 'package:hoshisky_ui/providers/hsk_dark_mode_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -46,11 +47,9 @@ class HskCircleIconButtonType2 extends StatelessWidget {
 
     buttonWidth = buttonWidth ?? ms.iconButtonHorizontalPaddingSmall;
     buttonHeight = buttonHeight ?? ms.iconButtonVerticalPaddingSmall;
-    backgroundColor = backgroundColor ?? (!isDarkMode
-        ? cs.button.background.baseLight               //nguyên tăc HSK widget không đi vào thuộc tính
-        : cs.button.background.baseDark);
+    backgroundColor = backgroundColor ?? cs.button.background.base.primary.byMode(isDarkMode);
     iconSize = iconSize ?? ms.fsIconMedium;
-    iconColor = iconColor ?? (!isDarkMode ? cs.primaryColor : cs.surfaceTextColor);
+    iconColor = iconColor ?? (!isDarkMode ? cs.semantic.primaryColor.light : cs.surfaceTextColor);
     borderColor = borderColor ?? (!isDarkMode?cs.primaryButtonBorderColor:cs.darkModePrimaryButtonBorderColor);
     borderWidth = borderWidth ?? 10;
     iconPadding = iconPadding ?? EdgeInsets.all(0);

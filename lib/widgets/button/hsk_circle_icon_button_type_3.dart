@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hoshisky_ui/constants/borders/border-width.dart';
 import 'package:hoshisky_ui/constants/colors/color.dart';
 import 'package:hoshisky_ui/extensions/theme_provider_extension.dart';
+import 'package:hoshisky_ui/extensions/themes/hsk_colors_extension.dart';
 import 'package:hoshisky_ui/providers/hsk_dark_mode_provider.dart';
+import 'package:hoshisky_ui/utils/hsk_button_colors_utils.dart';
 import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
@@ -16,7 +19,7 @@ class HskCircleIconButtonType3 extends StatelessWidget {
   late Color? borderColor;
   late double? iconSize;
   EdgeInsetsGeometry? iconPadding;
-  double? iconButtonElevation ;
+  double? iconButtonElevation;
   late double? borderWidth;
   late Color? overlayColor;
 
@@ -31,11 +34,10 @@ class HskCircleIconButtonType3 extends StatelessWidget {
     this.borderColor,
     this.iconPadding,
     this.iconSize,
-    this.iconButtonElevation ,
+    this.iconButtonElevation,
     this.marginBottom,
     this.borderWidth,
     this.overlayColor,
-    
   });
 
   @override
@@ -45,54 +47,49 @@ class HskCircleIconButtonType3 extends StatelessWidget {
     final cs = context.colorScheme;
     final isDarkMode = context.isDarkMode;
 
-    buttonWidth = buttonWidth ?? ms.iconButtonHorizontalPaddingSmall;
-    marginBottom = marginBottom?? 0;
-    buttonHeight = buttonHeight ?? ms.iconButtonVerticalPaddingSmall;
-    backgroundColor = backgroundColor ??
-        (!isDarkMode
-            ? cs.button.background.baseLight
-            : cs.button.background.baseDark);
-    iconButtonElevation = iconButtonElevation  ?? ms.iconButtonElevation;
-    iconColor =
-        iconColor ?? (!isDarkMode ? cs.tertiaryIconColor : cs.darkModeTertiaryIconColor);
-    iconSize = iconSize ?? ms.fsIconMedium;
-    borderColor = borderColor ??
-        (!isDarkMode
-            ? gray400
-            : gray700);
-    borderWidth = borderWidth ?? 1;
-    iconPadding = iconPadding ?? EdgeInsets.all(0);
+    buttonWidth = buttonWidth ?? ms.button.size.base.primary.horizontal;
     marginBottom = marginBottom ?? 0;
-    overlayColor = overlayColor ?? (!isDarkMode
-        ? cs.button.background.pressedLight
-        : cs.button.background.pressedDark);
+    buttonHeight = buttonHeight ?? ms.button.size.base.primary.vertical;
+    backgroundColor =
+        backgroundColor ?? transparent;
+    iconButtonElevation = iconButtonElevation ?? ms.iconButtonElevation;
+    iconColor = iconColor ?? cs.semantic.primaryColor.byMode(isDarkMode);
+    iconSize = iconSize ?? ms.fsIconMedium;
+    borderColor = borderColor ?? (!isDarkMode ? gray400 : gray700);
+    borderWidth = borderWidth ?? 1;
+    iconPadding = EdgeInsets.all(ms.button.size.base.primary.vertical);
+    marginBottom = marginBottom ?? 0;
+    overlayColor = iconColor!.withValues(alpha: ms.semantic.overlayOpacity);
+    final baseStyle = IconButtonTheme.of(context).style;
     return Container(
-  width: buttonWidth,
-  height: buttonHeight,
-  margin: EdgeInsets.only(bottom: marginBottom!),
-  child: Material(
-    elevation: iconButtonElevation! ,  // Độ nổi của IconButton
-    color: backgroundColor, // Màu nền của IconButton
-    shape: CircleBorder(
-      side: BorderSide(
-        width: borderWidth!,  // Độ dày viền
-        color: borderColor!,  // Màu viền
-        style: borderWidth == 0 ? BorderStyle.none : BorderStyle.solid,
+      margin: EdgeInsets.only(bottom: marginBottom!),
+      child: IconButton(
+        onPressed: onPressed,
+        iconSize: baseStyle?.iconSize?.resolve({}) ?? 24.0, // Kích thước của icon
+        padding: iconPadding, // Loại bỏ padding mặc định của IconButton
+        style:  baseStyle!.copyWith(
+          foregroundColor: HskButtonColorUtils.overrideStates(
+          base: WidgetStatePropertyAll(
+              baseStyle.backgroundColor?.resolve({}) ??
+                  Colors.transparent),
+          normal: iconColor, 
+          pressed: iconColor,
+          ),
+          backgroundColor:
+              WidgetStateProperty.all(backgroundColor), // Màu nền của nút
+          overlayColor:
+              WidgetStateProperty.all(overlayColor), // Màu overlay khi nhấn
+          side: WidgetStateProperty.all(ms.button.side.base.primary.style.copyWith(
+            color: cs.button.border.base.primary.byMode(isDarkMode),
+            width: border_none
+          ),
+
+          ),
+          // foregroundColor: WidgetStatePropertyAll(iconColor),
+          shape: WidgetStateProperty.all(CircleBorder()), // Hình dạng nút
+        ),
+        icon: icon, // Biểu tượng của nút
       ),
-    ),
-    child: IconButton(
-      onPressed: onPressed,
-      color: iconColor,  // Màu của icon
-      iconSize: iconSize, // Kích thước của icon
-      padding: iconPadding, // Loại bỏ padding mặc định của IconButton
-      style: ButtonStyle(
-        backgroundColor: WidgetStateProperty.all(Colors.transparent), // Màu nền của nút
-        overlayColor: WidgetStateProperty.all(overlayColor), // Màu overlay khi nhấn
-        shape: WidgetStateProperty.all(CircleBorder()), // Hình dạng nút
-      ),
-      icon: icon,  // Biểu tượng của nút
-    ),
-  ),
-);
+    );
   }
 }

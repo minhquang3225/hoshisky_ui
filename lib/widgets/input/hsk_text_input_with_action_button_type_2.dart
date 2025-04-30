@@ -104,7 +104,7 @@ class _HskTextInputWithActionButtonType2State
                     top: ms.inputBorderWidth,
                     child: ShapeBulletRight(
                       bulletBackgroundColor: widget.backgroundInputColor, 
-                      backgroundColor: cs.darkModePrimaryColor, 
+                      backgroundColor: cs.semantic.primaryColor.dark, 
                       bulletHeight: widget.inputHeight-2 * ms.dividerSpace, 
                       bulletWidth: w_15,
                     )

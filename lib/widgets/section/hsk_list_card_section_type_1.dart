@@ -20,7 +20,6 @@ class HskListCardSectionType1 extends StatelessWidget {
     this.nextSectionSpacing,
     this.textAlign = CrossAxisAlignment.start,
     this.cardMinHeight = const BoxConstraints(minHeight: h_20),
-
   });
 
   @override
@@ -28,9 +27,11 @@ class HskListCardSectionType1 extends StatelessWidget {
     final ms = context.measure;
     final cs = context.colorScheme;
     final isDarkMode = context.read<HskDarkModeProvider>().isDarkMode;
-    final nextSectionSpacing = this.nextSectionSpacing ?? ms.spacingBottomComponentLarge;
+    final nextSectionSpacing =
+        this.nextSectionSpacing ?? ms.spacingBottomComponentLarge;
     return Container(
       margin: nextSectionSpacing,
+
       child: Column(
         crossAxisAlignment: textAlign,
         children: [
@@ -41,8 +42,9 @@ class HskListCardSectionType1 extends StatelessWidget {
           // Dùng ListView hoặc Column để hiển thị danh sách các content
           ...contentList.map((content) {
             return HskContentCard(
-              content: content, 
-              backgroundColor: !isDarkMode?cs.surfaceColor:cs.darkModeSurfaceColor,
+              content: content,
+              backgroundColor:
+                  !isDarkMode ? cs.surfaceColor : cs.darkModeSurfaceColor,
               cardPadding: ms.boxPaddingLarge,
               elevation: ms.cardElevation,
               constraint: cardMinHeight,

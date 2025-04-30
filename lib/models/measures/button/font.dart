@@ -9,5 +9,5 @@ abstract class HskBaseButtonFonts {
 }
 
 abstract class HskPrimaryBaseButtonFont{
-  FontStyle get style;
+  TextStyle get style;
 }

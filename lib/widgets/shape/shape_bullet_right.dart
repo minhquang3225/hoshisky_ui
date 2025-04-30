@@ -36,7 +36,7 @@ class ShapeBulletRight extends StatelessWidget{
               width: w_5,
               height: ms.inputHeightSmall - 2*ms.inputBorderWidth,
               decoration: BoxDecoration(
-                color: !isDarkMode?cs.primaryColor:cs.darkModePrimaryColor,
+                color: !isDarkMode?cs.semantic.primaryColor.light:cs.semantic.primaryColor.dark,
               ),
             ),
           ),

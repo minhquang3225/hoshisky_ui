@@ -40,6 +40,7 @@ class HskCardSectionType1 extends StatelessWidget {
             cardPadding: cardPadding,
             elevation: elevation,
             constraint: constraint,
+            
           ),
         ],
     );

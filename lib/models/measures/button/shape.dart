@@ -9,5 +9,5 @@ abstract class HskBaseButtonShapes {
 }
 
 abstract class HskPrimaryBaseButtonShape{
-  ShapeBorder get style;
+  dynamic get style;
 }

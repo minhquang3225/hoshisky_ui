@@ -1,39 +1,34 @@
-import 'package:flutter/material.dart';
+import 'package:hoshisky_ui/models/colors/hsk_color_pair.dart';
 
 abstract class HskSemanticColors {
-  Color get primaryColor;
-  Color get primaryLightColor;
-  Color get primaryDarkColor;
-  Color get darkModePrimaryColor;
-  Color get darkModePrimaryLightColor;
-  Color get darkModePrimaryDarkColor;
+  // Primary
+  HskColorPair get primaryColor;
+  HskColorPair get primaryLightColor;
+  HskColorPair get primaryDarkColor;
 
-  Color get secondaryColor;
-  Color get secondaryLightColor;
-  Color get secondaryDarkColor;
-  Color get darkModeSecondaryColor;
-  Color get darkModeSecondaryLightColor;
-  Color get darkModeSecondaryDarkColor;
+  // Secondary
+  HskColorPair get secondaryColor;
+  HskColorPair get secondaryLightColor;
+  HskColorPair get secondaryDarkColor;
 
-  Color get disabledBackgroundColor;
+  // Foreground
+  HskColorPair get foregroundColor;
+  HskColorPair get disabledForegroundColor;
 
-  Color get darkModeDisabledBackgroundColor;
+  // Background
+  HskColorPair get backgroundColor;
+  HskColorPair get disabledBackgroundColor;
 
+  // Border
+  HskColorPair get borderColor;
 
-  Color get errorColor;
+  // Status
+  HskColorPair get errorColor;
+  HskColorPair get successColor;
+  HskColorPair get warningColor;
+  HskColorPair get infoColor;
 
-  Color get darkModeErrorColor;
-
-
-  Color get successColor;
-
-  Color get darkModeSuccessColor;
-
-
-  Color get warningColor;
-
-  Color get darkModeWarningColor;
-
-  Color get infoColor;
-  Color get darkModeInfoColor;
+  // Overlay
+  HskColorPair get overlayColor;
+  double get overlayOpacity;
 }

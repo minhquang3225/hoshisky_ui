@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hoshisky_ui/extensions/theme_provider_extension.dart';
+import 'package:hoshisky_ui/extensions/themes/hsk_colors_extension.dart';
 import 'package:hoshisky_ui/providers/hsk_dark_mode_provider.dart';
 import 'package:hoshisky_ui/providers/hsk_input_provider.dart';
 
@@ -76,7 +77,7 @@ class _HskTextInputWithActionButtonType1State
     double buttonHeight = inputHeight - 2 * inputBorderWidth;
     EdgeInsetsGeometry contentInputPadding = widget.contentInputPadding ?? EdgeInsets.only(top: 12, bottom: 12, left: 20, right: 100);
     Color buttonTextColor = !isDarkMode? cs.surfaceTextColor : cs.surfaceTextColor;
-    Color buttonBackgroundColor = !isDarkMode? cs.button.background.base.primary.light : cs.button.background.base.primary.dark;
+    Color buttonBackgroundColor = cs.button.background.base.primary.byMode(isDarkMode);
     BorderRadius buttonBorderRadius = BorderRadius.only(topRight: Radius.circular(ms.round-2), bottomRight: Radius.circular(ms.round-2));
     //lấy key controller cho input
     String key = HskInputProvider().getKey(); // Không đặt trong Consumer để tránh rebuild

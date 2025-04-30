@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hoshisky_ui/models/measures/button/button.dart';
+import 'package:hoshisky_ui/models/measures/hsk_semantic_measures.dart';
 
 abstract class HskMeasure {
+  //
+  HskButtonMeasures get button;
+  HskSemanticMeasures get semantic;
+
   // Border
   double get round;
   Radius get radius;

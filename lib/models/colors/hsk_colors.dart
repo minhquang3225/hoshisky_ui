@@ -5,3 +5,4 @@ abstract class HskColors {
   Color get light;
   Color get dark;
 }
+
