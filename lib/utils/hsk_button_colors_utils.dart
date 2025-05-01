@@ -5,13 +5,11 @@ class HskButtonColorUtils {
   static WidgetStateProperty<Color> resolveByState({
     required Color normal,
     required Color disabled,
-    required Color pressed,
     required Color hovered,
     required Color selected,
   }) {
     return WidgetStateProperty.resolveWith<Color>((states) {
       if (states.contains(WidgetState.disabled)) return disabled;
-      if (states.contains(WidgetState.pressed)) return pressed;
       if (states.contains(WidgetState.hovered)) return hovered;
       if (states.contains(WidgetState.selected)) return selected;
       return normal;
@@ -23,13 +21,11 @@ class HskButtonColorUtils {
     required WidgetStateProperty<Color> base,
     Color? normal,
     Color? disabled,
-    Color? pressed,
     Color? hovered,
     Color? selected,
   }) {
     return WidgetStateProperty.resolveWith((states) {
       if (states.contains(WidgetState.disabled) && disabled != null) return disabled;
-      if (states.contains(WidgetState.pressed) && pressed != null) return pressed;
       if (states.contains(WidgetState.hovered) && hovered != null) return hovered;
       if (states.contains(WidgetState.selected) && selected != null) return selected;
 

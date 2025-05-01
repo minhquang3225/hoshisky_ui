@@ -40,7 +40,7 @@ class HskTextButtonType1 extends StatelessWidget {
     horizontalPadding =
         horizontalPadding ?? ms.textButtonHorizontalPaddingSmall;
     backgroundColor = backgroundColor ??
-        cs.button.background.base.primary.byMode(isDarkMode);
+        cs.semantic.primaryColor.byMode(isDarkMode);
     textColor = textColor ?? cs.semantic.foregroundColor.byMode(isDarkMode);
     margin = margin ?? EdgeInsets.all(0);
     final baseStyle = TextButtonTheme.of(context).style;
@@ -62,7 +62,6 @@ class HskTextButtonType1 extends StatelessWidget {
               disabled: cs.button.foreground.disabled.primary.byMode(isDarkMode),
               hovered: textColor!,
               selected: textColor!,
-              pressed: textColor!,
             ),
             padding: WidgetStateProperty.all(
               EdgeInsets.symmetric(

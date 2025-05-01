@@ -69,7 +69,6 @@ class HskTextButtonType2 extends StatelessWidget {
             disabled: cs.button.foreground.disabled.primary.byMode(isDarkMode),
             hovered: textColor!,
             selected: textColor!,
-            pressed: textColor!,
           
           ),
           overlayColor: WidgetStatePropertyAll(backgroundColor!.withValues(alpha: .3)),
