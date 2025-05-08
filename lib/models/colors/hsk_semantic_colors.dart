@@ -20,7 +20,8 @@ abstract class HskSemanticColors {
   HskColorPair get disabledBackgroundColor;
 
   // Border
-  HskColorPair get borderColor;
+  HskColorPair get sideColor;
+  HskColorPair get disabledSideColor;
 
   // Status
   HskColorPair get errorColor;
@@ -31,4 +32,8 @@ abstract class HskSemanticColors {
   // Overlay
   HskColorPair get overlayColor;
   double get overlayOpacity;
+
+  // Disabled opacity
+  double get disabledOpacity;
+
 }

@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hoshisky_ui/constants/colors/color.dart';
 import 'package:hoshisky_ui/extensions/theme_provider_extension.dart';
 import 'package:hoshisky_ui/extensions/themes/hsk_colors_extension.dart';
-import 'package:hoshisky_ui/providers/hsk_dark_mode_provider.dart';
 import 'package:hoshisky_ui/utils/hsk_button_colors_utils.dart';
-import 'package:provider/provider.dart';
 
 //Icon button có đặc điểm, tròn, màu sác nền và màu chữ quy định bởi IconButtonThemeData
 
@@ -40,11 +38,11 @@ class HskCircleIconButtonType1 extends StatelessWidget {
     final cs = context.colorScheme;
     final isDarkMode = context.isDarkMode;
 
-    paddingSize = paddingSize ?? ms.button.size.base.primary.vertical;
+    paddingSize = paddingSize ?? ms.button.size.base.small.vertical;
 
     backgroundColor = backgroundColor ?? cs.semantic.primaryColor.byMode(isDarkMode);
     iconColor = iconColor ?? white;
-    iconSize = iconSize ?? ms.button.font.base.primary.style.fontSize;
+    iconSize = iconSize ?? ms.button.font.base.medium.style.fontSize;
     borderColor = borderColor ?? (!isDarkMode?cs.primaryButtonBorderColor:cs.darkModePrimaryButtonBorderColor);
     margin = margin ?? EdgeInsets.all(0);
     
@@ -55,6 +53,7 @@ class HskCircleIconButtonType1 extends StatelessWidget {
       margin: margin,
       child: IconButton(
         onPressed: onPressed,
+        iconSize: 100,
         padding: EdgeInsets.symmetric(horizontal: paddingSize!, vertical: paddingSize!), // Loại bỏ padding mặc định của IconButton
         style: baseStyle?.copyWith(
           backgroundColor: HskButtonColorUtils.overrideStates(

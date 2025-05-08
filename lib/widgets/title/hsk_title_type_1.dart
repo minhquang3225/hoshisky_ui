@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hoshisky_ui/widgets/line/hsk_horizontial_solid_line.dart';
 
 // ignore: camel_case_types
 class HskTitleType1 extends StatelessWidget {

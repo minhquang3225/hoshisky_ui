@@ -9,21 +9,25 @@ class HskOutlinedTextButtonType1 extends StatelessWidget {
 
   late EdgeInsets? margin;
   final VoidCallback? onPressed;
-  final String buttonTitle;
+  final String label;
   late Color? backgroundColor;
   late Color? borderColor;  
   double? buttonElevation ;
   late double? borderWidth;
   late Color? textColor;
+  late double? verticalPadding;
+  late double? horizontalPadding;
 
   HskOutlinedTextButtonType1({
     super.key,
-    required this.buttonTitle,
+    required this.label,
     required this.onPressed,
     this.textColor,
     this.buttonElevation ,
     this.margin,
     this.borderWidth,
+    this.verticalPadding,
+    this.horizontalPadding,
 
     @Deprecated("Chọn HskWidget khác hoặc thay đổi trong ButtonThemeData")
     this.borderColor,
@@ -44,17 +48,18 @@ class HskOutlinedTextButtonType1 extends StatelessWidget {
     backgroundColor = backgroundColor??transparent;
     textColor =
         textColor ?? cs.button.foreground.base.primary.byMode(isDarkMode);
- 
+    verticalPadding = verticalPadding ?? ms.button.size.base.small.vertical;
+    horizontalPadding = horizontalPadding ?? ms.button.size.base.small.horizontal;
     borderWidth = borderWidth ?? ms.buttonBorderWidth;
     margin = margin ?? EdgeInsets.all(0);
     final overlayColor = textColor!.withValues(alpha: cs.semantic.overlayOpacity);
     final baseStyle = OutlinedButtonTheme.of(context).style;
-   
     return Container(
       margin: margin,
       child: OutlinedButton(
         onPressed: onPressed,
         style: baseStyle!.copyWith(
+         
           backgroundColor: WidgetStateProperty.all(backgroundColor),
           foregroundColor: HskButtonColorUtils.overrideStates(
           base: WidgetStatePropertyAll(
@@ -64,10 +69,14 @@ class HskOutlinedTextButtonType1 extends StatelessWidget {
           disabled: textColor!.withValues(alpha: 0.4),
         ),
           overlayColor: WidgetStatePropertyAll(overlayColor),
+          padding: WidgetStateProperty.all(
+              EdgeInsets.symmetric(
+                  vertical: verticalPadding!, horizontal: horizontalPadding!),
+            ),
         ),
         child: FittedBox(
           fit: BoxFit.scaleDown,
-          child: Text(buttonTitle)),
+          child: Text(label)),
       ),
     );
   }

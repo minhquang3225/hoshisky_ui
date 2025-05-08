@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hoshisky_ui/constants/colors/color.dart';
 import 'package:hoshisky_ui/extensions/theme_provider_extension.dart';
 import 'package:hoshisky_ui/extensions/themes/hsk_colors_extension.dart';
-import 'package:hoshisky_ui/providers/hsk_dark_mode_provider.dart';
 import 'package:hoshisky_ui/utils/hsk_button_colors_utils.dart';
-import 'package:provider/provider.dart';
 
 class HskCircleIconButtonType2 extends StatelessWidget {
   
@@ -41,7 +38,7 @@ class HskCircleIconButtonType2 extends StatelessWidget {
     final isDarkMode = context.isDarkMode;
 
 
-    paddingSize = paddingSize ?? ms.button.size.base.primary.vertical;
+    paddingSize = paddingSize ?? ms.button.size.base.small.vertical;
     iconSize = iconSize ?? ms.fsIconMedium;
     iconColor = iconColor ?? cs.semantic.primaryColor.byMode(isDarkMode);
     backgroundOpacity = backgroundOpacity ?? 0.1;

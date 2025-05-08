@@ -1,0 +1,21 @@
+Đặc  diểm chung của các flat button
+1. truyền hàm onPressed
+2. bắt buộc truyền widget label thuộc TextSizeController() đẻ quản lí chiều cao của icon
+2. đảm bao 3 trạng thái: default overlay disbled - với background, text - color...
+3. có thể quyết định background color trực tiếp hoặc gián tiếp (không phụ thuộc hoàn toàn hsk color scheme)
+4. chiều cao text và icon button được quy định bởi ms.button.size.labelHeight + vertical padding
+5. font size của text và icon bị điều chỉnh bởi FittedBox và AutoSizeText
+6. không có elevation
+7. truyền được margin
+9. các giá trị borderRadius được quy định bởi ms.button.shape
+10. fontSize và fontBold => truyền trực tiếp Widget label vào 
+
+
+
+Các tham số bắt buộc:
+1. onPressed (void Function)
+2. margin (EdgeInsét)
+3. backgroundColor (colors)
+5. label (widget)
+6. verticalPadding (double) * 2 + lableHeight => ra chiều cao của button
+

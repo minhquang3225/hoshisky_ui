@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 abstract class HskSemanticMeasures {
@@ -27,15 +25,21 @@ abstract class HskSemanticMeasures {
 
   double get lspLabel;
 
-  //button
-  //1. size
-  double get elementVerticalPadding;
-  double get blockVerticalPadding;
-  double get sectionVerticalPadding;
+  //1. size (fixeheight / padding height)
 
+  //-------1a. text  (text in button)
+  double get labelHeight;
+
+  //-------1b. element (button, input)
+  double get elementVerticalPadding; //padding phần tử cấp Element (button,....)
   double get elementHorizontalPadding;
-  double get blockHorizontalPadding;
-  double get sectionHorizontalPadding;
+
+
+  //-------1c. block (appbar)
+
+  //-------1d. section
+
+  //-------1e. page
 
   //-------------------border-radius--------------------
   BorderRadius get baseBorderRadius;

@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:hoshisky_ui/extensions/theme_provider_extension.dart';
@@ -15,7 +14,7 @@ class HskTextButtonType1 extends StatelessWidget {
   final VoidCallback? onPressed;
   late Color? backgroundColor;
   late Color? textColor;
-  final String buttonTitle;
+  final String label;
 
 
   HskTextButtonType1({
@@ -24,7 +23,7 @@ class HskTextButtonType1 extends StatelessWidget {
     this.margin,
     this.horizontalPadding,
     required this.onPressed,
-    required this.buttonTitle,
+    required this.label,
     this.backgroundColor,
     this.textColor,
   });
@@ -36,9 +35,9 @@ class HskTextButtonType1 extends StatelessWidget {
     final cs = context.colorScheme;
     final isDarkMode = context.isDarkMode;
 
-    verticalPadding = verticalPadding ?? ms.textButtonVerticalPaddingSmall;
+    verticalPadding = verticalPadding ?? ms.button.size.base.small.vertical;
     horizontalPadding =
-        horizontalPadding ?? ms.textButtonHorizontalPaddingSmall;
+        horizontalPadding ?? ms.button.size.base.small.horizontal;
     backgroundColor = backgroundColor ??
         cs.semantic.primaryColor.byMode(isDarkMode);
     textColor = textColor ?? cs.semantic.foregroundColor.byMode(isDarkMode);
@@ -69,7 +68,7 @@ class HskTextButtonType1 extends StatelessWidget {
             ),
            
           ),
-          child: FittedBox(fit: BoxFit.scaleDown, child: Text(buttonTitle)),
+          child: FittedBox(fit: BoxFit.scaleDown, child: Text(label)),
         ));
   }
 }

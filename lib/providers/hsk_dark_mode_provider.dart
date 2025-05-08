@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // Để sử dụng PlatformDispatcher
+// Để sử dụng PlatformDispatcher
 
 class HskDarkModeProvider extends ChangeNotifier {
   bool _isDarkMode = false;

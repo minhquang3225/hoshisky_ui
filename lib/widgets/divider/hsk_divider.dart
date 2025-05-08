@@ -3,7 +3,7 @@ import 'package:hoshisky_ui/extensions/theme_provider_extension.dart';
 import 'package:provider/provider.dart';
 
 class HskDivider extends StatelessWidget {
-  const HskDivider({Key? key}) : super(key: key);
+  const HskDivider({super.key});
   @override
   Widget build(BuildContext context) {
      final ms = context.measure;

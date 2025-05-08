@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hoshisky_ui/extensions/theme_provider_extension.dart';
 import 'package:hoshisky_ui/extensions/themes/hsk_colors_extension.dart';
-import 'package:hoshisky_ui/providers/hsk_dark_mode_provider.dart';
 import 'package:hoshisky_ui/utils/hsk_button_colors_utils.dart';
 
-import 'package:provider/provider.dart';
 
 //đặc điểm, nền là phiên bản giảm opacity của primaryColor, không viền 
 //Các tham số truyền vào, độ opacity (mặc định 0.1), màu nền mặc định theo hệ thống scheme, màu text mặc định theo hệ thống scheme
@@ -15,7 +13,7 @@ class HskTextButtonType2 extends StatelessWidget {
   final VoidCallback? onPressed;
   late Color? backgroundColor;
   late Color? textColor;
-  final String buttonTitle;
+  final String label;
   late double? backgroundOpacity;
 
 
@@ -26,7 +24,7 @@ class HskTextButtonType2 extends StatelessWidget {
     this.horizontalPadding,
     this.verticalPadding,
     required this.onPressed,
-    required this.buttonTitle,
+    required this.label,
     this.backgroundColor, 
     this.textColor, 
     this.backgroundOpacity,
@@ -78,7 +76,7 @@ class HskTextButtonType2 extends StatelessWidget {
         ),
         child: FittedBox(
           fit: BoxFit.scaleDown,
-          child: Text(buttonTitle),
+          child: Text(label),
       ),)
     );
   }

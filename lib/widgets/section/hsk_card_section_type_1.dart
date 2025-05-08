@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hoshisky_ui/constants/spacing/padding.dart';
 import 'package:hoshisky_ui/extensions/theme_provider_extension.dart';
 
 
 import 'package:hoshisky_ui/widgets/card/hsk_content_card.dart';
-import 'package:provider/provider.dart';
 
 class HskCardSectionType1 extends StatelessWidget {
   final Widget title; // Widget title

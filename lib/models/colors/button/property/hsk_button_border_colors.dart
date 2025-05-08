@@ -2,8 +2,8 @@ import 'package:hoshisky_ui/models/colors/hsk_colors.dart';
 import 'package:hoshisky_ui/models/colors/hsk_primary_colors.dart';
 
 abstract class HskButtonBorderColors {
-  HskPrimaryColors get base;
-  HskPrimaryColors get disabled;
+  HskOrdinalColors get base;
+  HskOrdinalColors get disabled;
   // HskColors get pressed;
 }
 

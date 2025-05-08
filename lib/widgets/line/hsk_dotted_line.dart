@@ -29,6 +29,8 @@ class DottedLinePainter extends CustomPainter {
 }
 
 class HskDottedLine extends StatelessWidget {
+  const HskDottedLine({super.key});
+
   @override
   Widget build(BuildContext context) {
     return CustomPaint(

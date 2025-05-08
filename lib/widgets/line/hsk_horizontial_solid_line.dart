@@ -15,7 +15,7 @@ class HskHorizontialSolidLine extends StatelessWidget {
   final double? dividerWidth;
   final double? dividerIndent;
   final double? dividerEndIndent;
-  HskHorizontialSolidLine({
+  const HskHorizontialSolidLine({
     super.key, 
     this.dividerColor,
     this.dividerBorderRadius,

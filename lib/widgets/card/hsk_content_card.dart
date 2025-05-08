@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hoshisky_ui/extensions/theme_provider_extension.dart';
-import 'package:hoshisky_ui/providers/hsk_dark_mode_provider.dart';
-import 'package:provider/provider.dart';
 
 class HskContentCard extends StatelessWidget {
   final Widget content; // Widget content

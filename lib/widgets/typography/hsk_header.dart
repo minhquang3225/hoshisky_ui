@@ -8,7 +8,7 @@ class Header1 extends StatelessWidget {
   final FontStyle? fontStyle; // Thêm tham số fontStyle
 
   // Constructor nhận vào text, style, color, margin và fontStyle
-  const Header1({
+  const Header1({super.key, 
     required this.text,
     this.style,
     this.color,

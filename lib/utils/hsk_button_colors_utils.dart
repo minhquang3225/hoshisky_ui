@@ -31,7 +31,7 @@ class HskButtonColorUtils {
 
       if (states.isEmpty && normal != null) return normal;
 
-      return base.resolve(states)!;
+      return base.resolve(states);
     });
   }
 }

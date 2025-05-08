@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hoshisky_ui/constants/size/width.dart';
 import 'package:hoshisky_ui/extensions/theme_provider_extension.dart';
 import 'package:hoshisky_ui/extensions/themes/hsk_colors_extension.dart';
-import 'package:hoshisky_ui/providers/hsk_dark_mode_provider.dart';
 import 'package:hoshisky_ui/providers/hsk_input_provider.dart';
 
 
 
-import 'package:hoshisky_ui/widgets/button/hsk_circle_icon_button_type_1.dart';
+import 'package:hoshisky_ui/widgets/button/flat/hsk_circle_icon_button_type_1.dart';
 import 'package:provider/provider.dart';
 
 class HskTextInputWithActionButtonType3 extends StatefulWidget {

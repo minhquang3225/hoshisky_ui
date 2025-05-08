@@ -2,12 +2,18 @@ import 'package:flutter/material.dart';
 
 abstract class HskButtonFonts {
   HskBaseButtonFonts get base;
+  
 }
 
 abstract class HskBaseButtonFonts {
-  HskPrimaryBaseButtonFont get primary;
+  HskPropsButtonFont get small;
+  HskPropsButtonFont get medium;
+  HskPropsButtonFont get large;
 }
 
-abstract class HskPrimaryBaseButtonFont{
+
+abstract class HskPropsButtonFont{
   TextStyle get style;
 }
+
+

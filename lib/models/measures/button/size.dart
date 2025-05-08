@@ -3,10 +3,13 @@ abstract class HskButtonSizes {
 }
 
 abstract class HskBaseButtonSizes {
-  HskPrimaryBaseButtonSize get primary;
+  HskSmallBaseButtonSize get small;
+  HskSmallBaseButtonSize get medium;
+  HskSmallBaseButtonSize get large;
 }
 
-abstract class HskPrimaryBaseButtonSize {
+abstract class HskSmallBaseButtonSize {
   double get vertical;
   double get horizontal;
+  double get labelHeight;
 }

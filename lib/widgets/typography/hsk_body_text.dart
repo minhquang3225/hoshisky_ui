@@ -5,7 +5,7 @@ class BodyText1 extends StatelessWidget {
   final TextStyle? style;
 
   // Constructor để nhận text và style
-  const BodyText1({
+  const BodyText1({super.key, 
     required this.text,
     this.style,
   });
@@ -24,7 +24,7 @@ class BodyText2 extends StatelessWidget {
   final TextStyle? style;
 
   // Constructor để nhận text và style
-  BodyText2({
+  const BodyText2({super.key, 
     required this.text,
     this.style,
   });
@@ -43,7 +43,7 @@ class BodyText3 extends StatelessWidget {
   final TextStyle? style;
 
   // Constructor để nhận text và style
-  BodyText3({
+  const BodyText3({super.key, 
     required this.text,
     this.style,
   });
