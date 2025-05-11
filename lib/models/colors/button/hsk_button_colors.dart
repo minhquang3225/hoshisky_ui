@@ -1,6 +1,6 @@
 // Tạo abstract class
 import 'package:hoshisky_ui/models/colors/hsk_ordinal_colors.dart';
-import 'package:hoshisky_ui/models/measures/hsk_button_state.dart';
+import 'package:hoshisky_ui/models/measures/button/hsk_button_state.dart';
 
 abstract class HskButtonColors {
   HskButtonState get background;

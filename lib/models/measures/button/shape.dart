@@ -1,6 +1,6 @@
 
-import 'package:hoshisky_ui/models/measures/hsk_button_state.dart';
+import 'package:hoshisky_ui/models/measures/button/hsk_button_state.dart';
 
-abstract class HskPrimaryBaseButtonShape{
+abstract class HskButtonShape{
   dynamic get style;
 }

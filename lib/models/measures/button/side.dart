@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hoshisky_ui/models/measures/hsk_button_state.dart';
+import 'package:hoshisky_ui/models/measures/button/hsk_button_state.dart';
 
-abstract class HskButtonSides extends HskButtonState {
-}
 
-abstract class HskBaseButtonSides {
-  HskPrimaryBaseButtonSide get primary;
-}
-
-abstract class HskPrimaryBaseButtonSide{
+abstract class HskButtonSide{
   BorderSide get style;
 }

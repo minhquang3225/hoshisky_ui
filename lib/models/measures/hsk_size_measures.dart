@@ -1,5 +1,5 @@
 abstract class HskSizeMeasures {
-  double get small;
-  double get medium;
-  double get large;
+  dynamic get small;
+  dynamic get medium;
+  dynamic get large;
 }

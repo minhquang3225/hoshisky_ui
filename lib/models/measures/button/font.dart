@@ -1,16 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hoshisky_ui/models/measures/hsk_button_state.dart';
-
-abstract class HskButtonFonts extends HskButtonState {}
-
-abstract class HskBaseButtonFonts {
-  HskPropsButtonFont get small;
-  HskPropsButtonFont get medium;
-  HskPropsButtonFont get large;
-}
+import 'package:hoshisky_ui/models/measures/button/hsk_button_state.dart';
 
 
-abstract class HskPropsButtonFont{
+abstract class HskButtonFont{
   TextStyle get style;
 }
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hoshisky_ui/extensions/theme_provider_extension.dart';
-import 'package:hoshisky_ui/extensions/themes/hsk_colors_extension.dart';
 import 'package:hoshisky_ui/widgets/text/hsk_fixed_label.dart';
 /// 1. Các tham số bắt buộc, onPressed, label
 /// 2. Các tham số khác
