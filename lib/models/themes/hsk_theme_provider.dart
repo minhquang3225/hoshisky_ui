@@ -4,15 +4,12 @@ import 'package:hoshisky_ui/constants/measure/hsk_measure.dart';
 import 'package:hoshisky_ui/models/themes/hsk_theme.dart';
 
 abstract class HskThemeProvider extends ChangeNotifier {
-  // Các thuộc tính chung cho theme
-  HskMeasure get measure; // Phương thức để lấy kích thước
+  HskMeasure get measure;
   HskColorScheme get colorScheme;
+  HskThemeList get currentTheme;
+  bool get isDarkMode;
 
-  HskTheme get currentTheme; // Phương thức để lấy màu sắc
-
-
-  void setTheme(HskTheme newTheme);
-
+  void setTheme(HskThemeList newTheme);
+  void toggleDarkMode();
   ThemeData getTheme(bool isDarkMode);
-  
 }

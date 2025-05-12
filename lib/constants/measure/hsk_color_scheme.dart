@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hoshisky_ui/models/colors/button/hsk_button_colors.dart';
 import 'package:hoshisky_ui/models/colors/hsk_semantic_colors.dart';
+import 'package:hoshisky_ui/models/colors/surface/hsk_surface_colors.dart';
 
 abstract class HskColorScheme {
   HskButtonColors get button;
   HskSemanticColors get semantic;
+  HskSurfaceColors get surface;
   //-------------------------------base - color----------------
   Color get primaryColor;
   Color get primaryLightColor;
