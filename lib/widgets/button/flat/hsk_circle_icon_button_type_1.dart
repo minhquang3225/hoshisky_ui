@@ -39,7 +39,6 @@ class HskCircleIconButtonType1 extends StatelessWidget {
     final isDarkMode = context.isDarkMode;
 
     paddingSize = paddingSize ?? ms.button.size.base.small.vertical;
-
     backgroundColor = backgroundColor ?? cs.semantic.primaryColor.byMode(isDarkMode);
     iconColor = iconColor ?? white;
     iconSize = iconSize ?? ms.button.font.base.medium.style.fontSize;
