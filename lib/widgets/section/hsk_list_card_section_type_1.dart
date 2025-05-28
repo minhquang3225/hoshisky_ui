@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:hoshisky_ui/constants/size/height.dart';
 import 'package:hoshisky_ui/extensions/theme_provider_extension.dart';
-import 'package:hoshisky_ui/providers/hsk_dark_mode_provider.dart';
-
+import 'package:hoshisky_ui/models/themes/hsk_theme_provider.dart';
 import 'package:hoshisky_ui/widgets/card/hsk_content_card.dart';
 import 'package:provider/provider.dart';
 
-class HskListCardSectionType1 extends StatelessWidget {
+class HskListCardSectionPrimaryFlat extends StatelessWidget {
   final Widget title; // Widget title
   final List<Widget> contentList; // List of widgets content
   final CrossAxisAlignment textAlign;
   final BoxConstraints cardMinHeight;
   final EdgeInsetsGeometry? nextSectionSpacing;
 
-  const HskListCardSectionType1({
+  const HskListCardSectionPrimaryFlat({
     super.key,
     required this.title,
     required this.contentList, // contentList thay cho content
@@ -26,12 +25,11 @@ class HskListCardSectionType1 extends StatelessWidget {
   Widget build(BuildContext context) {
     final ms = context.measure;
     final cs = context.colorScheme;
-    final isDarkMode = context.read<HskDarkModeProvider>().isDarkMode;
+    final isDarkMode = context.read<HskThemeProvider>().isDarkMode;
     final nextSectionSpacing =
         this.nextSectionSpacing ?? ms.spacingBottomComponentLarge;
     return Container(
       margin: nextSectionSpacing,
-
       child: Column(
         crossAxisAlignment: textAlign,
         children: [
